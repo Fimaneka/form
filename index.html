@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessible Registration Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Student Registration</h1>
+
+  <div id="feedback" aria-live="polite" class="error"></div>
+
+  <form id="regForm" novalidate>
+    <label for="firstName">First Name *</label>
+    <input id="firstName" name="firstName" required aria-describedby="firstNameError">
+    <div id="firstNameError" class="error"></div>
+
+    <label for="lastName">Last Name *</label>
+    <input id="lastName" name="lastName" required aria-describedby="lastNameError">
+    <div id="lastNameError" class="error"></div>
+
+    <label for="email">Email *</label>
+    <input id="email" name="email" type="email" required aria-describedby="emailError">
+    <div id="emailError" class="error"></div>
+
+    <label for="programme">Programme *</label>
+    <select id="programme" name="programme" required aria-describedby="programmeError">
+      <option value="">--Select Programme--</option>
+      <option>BSc Computer Science</option>
+      <option>BEng Software Engineering</option>
+      <option>BSc Information Systems</option>
+      <option value="other">Other</option>
+    </select>
+    <div id="programmeError" class="error"></div>
+
+    <div id="otherProgrammeContainer" style="display:none;">
+      <label for="otherProgramme">Please specify other programme *</label>
+      <input id="otherProgramme" name="otherProgramme" aria-describedby="otherProgrammeError">
+      <div id="otherProgrammeError" class="error"></div>
+    </div>
+
+    <label for="year">Year *</label>
+    <select id="year" name="year" required aria-describedby="yearError">
+      <option value="">--Select Year--</option>
+      <option>1</option><option>2</option><option>3</option><option>4</option>
+    </select>
+    <div id="yearError" class="error"></div>
+
+    <label for="interests">Interests</label>
+    <input id="interests" name="interests">
+
+    <label for="photo">Photo URL</label>
+    <input id="photo" name="photo" type="url" aria-describedby="photoError">
+    <div id="photoError" class="error"></div>
+
+    <div class="form-actions">
+      <button type="submit" id="submitBtn">Register</button>
+      <button type="button" id="cancelEdit" class="cancel-btn" style="display:none;">Cancel Edit</button>
+    </div>
+  </form>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search profiles...">
+    <button type="button" id="clearSearch" aria-label="Clear Search" title="Clear Search">X</button>
+  </div>
+
+  <section class="cards" id="cards"></section>
+
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Programme</th><th>Year</th><th>Action</th></tr>
+      </thead>
+      <tbody id="summary"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
