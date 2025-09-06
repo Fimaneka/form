@@ -1,0 +1,180 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 2rem;
+  background: #e0f7fa;
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png');
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 150, 136, 0.3);
+  z-index: -1;
+}
+
+form {
+  max-width: 600px;
+  background: #b2ebf2;
+  padding: 1.8rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 150, 136, 0.2);
+}
+
+label {
+  display: block;
+  margin-top: .5rem;
+  font-weight: bold;
+  color: #00796b;
+}
+
+input, select {
+  width: 100%;
+  padding: .5rem;
+  margin-top: .2rem;
+  border: 1px solid #0097a7;
+  border-radius: 4px;
+  background: #e0f2f1;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: .9rem;
+  margin-bottom: .4rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.card {
+  border: 1px solid #00796b;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #0097a7;
+  width: 300px;
+  color: #fff;
+  transition: transform .2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #e0f2f1;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: #e0f2f1;
+}
+
+th, td {
+  border: 1px solid #0097a7;
+  padding: .5rem;
+  text-align: left;
+  color: #00796b;
+}
+
+button {
+  margin-top: .5rem;
+  padding: .6rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #b2ebf2;
+  color: #00796b;
+  transition: background 0.2s;
+  min-height: 40px;
+  font-size: 1rem;
+}
+
+button:hover, button:focus {
+  background: #0097a7;
+  color: #fff;
+}
+
+.remove-btn {
+  background: #d32f2f;
+  color: #fff;
+}
+
+.cancel-btn {
+  background: #aaa;
+  color: #fff;
+}
+
+.form-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+#search {
+  width: 100%;
+  margin: 0;
+}
+
+#clearSearch {
+  padding: 0.5rem 0.8rem;
+  min-width: 40px;
+  min-height: 40px;
+  margin: 0;
+  font-weight: bold;
+}
+
+#submitBtn {
+  background: #00796b;
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid #0097a7;
+  box-shadow: 0 2px 8px rgba(0, 150, 136, 0.15);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+#submitBtn:hover, #submitBtn:focus {
+  background: #0097a7;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0, 150, 136, 0.25);
+}
+
+@media (max-width: 700px) {
+  .cards { flex-direction: column; width: 100%; }
+  .card { width: 100%; }
+  button { width: 100%; }
+  .search-container { max-width: 100%; }
+}
